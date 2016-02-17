@@ -3,10 +3,9 @@
 Provides [ElasticMQ](https://github.com/adamw/elasticmq).
 
 ## Supported tags and respective `Dockerfile` links
- * [`latest`, `0.8.12` (Dockerfile)](https://github.com/expert360/docker-elasticmq/blob/master/Dockerfile)
- * [`0.8.7` (Dockerfile)](https://github.com/expert360/docker-elasticmq/blob/0.8.7/Dockerfile)
+ * [`latest`n(Dockerfile)](https://github.com/cu12/docker-elasticmq/blob/master/Dockerfile)
 
-## expert360/elasticmq:latest
+## cu12/elasticmq:latest
 
 Installs the latest version of ElasticMQ and exposes port 9324.
 
@@ -14,4 +13,10 @@ Running should be as simple as:
 
     docker run -p 9324:9324 -d expert360/elasticmq
 
-If you wish to custimise the settings, mount your config at `/elasticmq/custom.conf`.
+If you wish to customise the settings, mount your config at `/elasticmq/custom.conf`.
+
+Use AWSCLI to manage SQS:
+
+```sh
+docker exec <container_id> bash -c "AWS_ACCESS_KEY_ID=fake AWS_SECRET_ACCESS_KEY=fake AWS_DEFAULT_REGION=fake aws --endpoint-url http://localhost:9324 sqs create-queue --queue-name <queue_name>"
+```
