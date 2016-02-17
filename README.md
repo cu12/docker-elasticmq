@@ -3,7 +3,7 @@
 Provides [ElasticMQ](https://github.com/adamw/elasticmq).
 
 ## Supported tags and respective `Dockerfile` links
- * [`latest`n(Dockerfile)](https://github.com/cu12/docker-elasticmq/blob/master/Dockerfile)
+ * [`latest`(Dockerfile)](https://github.com/cu12/docker-elasticmq/blob/master/Dockerfile)
 
 ## cu12/elasticmq:latest
 
