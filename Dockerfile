@@ -18,6 +18,8 @@ RUN apk --purge -v del ${PACKAGES_CLEANUP} && \
 
 ADD https://s3-eu-west-1.amazonaws.com/softwaremill-public/elasticmq-server-${ELASTICMQ_VERSION}.jar /elasticmq/server.jar
 
+RUN chmod 544 /elasticmq/server.jar
+
 EXPOSE 9324
 
 USER nobody
