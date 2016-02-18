@@ -9,11 +9,6 @@ COPY custom.conf /elasticmq/custom.conf
 # Install packages
 RUN apk --update --repository http://dl-1.alpinelinux.org/alpine/edge/community/ add ${PACKAGES}
 
-# Add Tini
-ENV TINI_VERSION v0.9.0
-ADD https://github.com/krallin/tini/releases/download/${TINI_VERSION}/tini /tini
-RUN chmod +x /tini
-
 # Install awscli
 RUN pip install awscli
 
@@ -27,7 +22,7 @@ RUN chmod 544 /elasticmq/server.jar
 
 EXPOSE 9324
 
-ENTRYPOINT ["/tini", "--"]
+ENTRYPOINT ["tini", "--"]
 
 USER nobody
 
