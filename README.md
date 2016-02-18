@@ -1,11 +1,14 @@
-# ElasticMQ Docker Image
+## ElasticMQ Docker Image
 
 Provides [ElasticMQ](https://github.com/adamw/elasticmq).
 
-## Supported tags and respective `Dockerfile` links
+ * The image is using Alpine linux (gliderlabs/alpine), making its size around 125 MB.
+   It uses [Tini](https://github.com/krallin/tini), a minimalistic init system to handle signaling properly.
+
+##### Supported tags and respective `Dockerfile` links
  * [`latest`(Dockerfile)](https://github.com/cu12/docker-elasticmq/blob/master/Dockerfile)
 
-## cu12/elasticmq:latest
+##### cu12/elasticmq:latest
 
 Installs the latest version of ElasticMQ and exposes port 9324.
 
