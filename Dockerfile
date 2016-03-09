@@ -6,19 +6,19 @@ ENV PACKAGES_CLEANUP py-pip
 
 COPY custom.conf /elasticmq/custom.conf
 
-# Install packages
-RUN apk --update --repository http://dl-1.alpinelinux.org/alpine/edge/community/ add ${PACKAGES}
-
-# Install awscli
-RUN pip install awscli
-
-# Cleanup
-RUN apk --purge -v del ${PACKAGES_CLEANUP} && \
-    rm /var/cache/apk/*
-
 ADD https://s3-eu-west-1.amazonaws.com/softwaremill-public/elasticmq-server-${ELASTICMQ_VERSION}.jar /elasticmq/server.jar
 
-RUN chmod 544 /elasticmq/server.jar
+# Install packages
+RUN echo "http://dl-1.alpinelinux.org/alpine/edge/community" >> /etc/apk/repositories && \
+    echo "http://dl-2.alpinelinux.org/alpine/edge/community" >> /etc/apk/repositories && \
+    echo "http://dl-3.alpinelinux.org/alpine/edge/community" >> /etc/apk/repositories && \
+    echo "http://dl-4.alpinelinux.org/alpine/edge/community" >> /etc/apk/repositories && \
+    echo "http://dl-5.alpinelinux.org/alpine/edge/community" >> /etc/apk/repositories && \
+    apk --update add ${PACKAGES} && \
+    pip install awscli && \
+    apk --purge -v del ${PACKAGES_CLEANUP} && \
+    rm /var/cache/apk/* && \
+    chmod 544 /elasticmq/server.jar
 
 EXPOSE 9324
 
