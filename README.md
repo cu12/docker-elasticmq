@@ -1,3 +1,5 @@
+[![](https://badge.imagelayers.io/seayou/elasticmq:latest.svg)](https://imagelayers.io/?images=seayou/elasticmq:latest 'Get your own badge on imagelayers.io')
+
 ## ElasticMQ Docker Image
 
 Provides [ElasticMQ](https://github.com/adamw/elasticmq).
