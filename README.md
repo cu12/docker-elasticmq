@@ -12,11 +12,11 @@ Provides [ElasticMQ](https://github.com/adamw/elasticmq).
 
 ##### cu12/elasticmq:latest
 
-Installs the latest version of ElasticMQ and exposes port 9324.
+Installs the latest (0.12.0) version of ElasticMQ and exposes port 9324.
 
 Running should be as simple as:
 
-    docker run -p 9324:9324 -d expert360/elasticmq
+    docker run -p 9324:9324 -d seayou/elasticmq
 
 If you wish to customise the settings, mount your config at `/elasticmq/custom.conf`.
 
